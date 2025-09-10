@@ -17,7 +17,7 @@
       musicFiles[Math.floor(Math.random() * musicFiles.length)]
     );
     audio.loop = true;
-    audio.volume = 0.25; // 🔊 reduced volume
+    audio.volume = 0.1; 
 
     function playAudio() {
       audio.currentTime = 10; // ⏩ skip first 10s (trim intro)
