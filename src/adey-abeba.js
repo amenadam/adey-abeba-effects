@@ -12,7 +12,8 @@
 
     const audio = new Audio(musicFiles[Math.floor(Math.random() * musicFiles.length)]);
     audio.loop = true;
-    audio.volume = 0.6; // adjust volume
+    audio.volume = 0.3; // adjust volume
+    audio.currentTime = 10; 
     audio.play().catch(err => {
       console.warn("Autoplay blocked by browser. Start music on user interaction.", err);
       document.addEventListener("click", () => {
