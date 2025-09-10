@@ -29,7 +29,7 @@
       100% { 
         transform: translateY(100vh) translateX(-20px) rotate(360deg) scale(1); 
         opacity: 0; 
-        filter: blur(2px) drop-shadow(0 0 10px orange);
+        filter: blur(10px) drop-shadow(0 0 10px orange);
       }
     }
   `;
