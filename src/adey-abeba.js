@@ -6,7 +6,7 @@
       top: -50px;
       width: 40px;
       height: 40px;
-      background-image: url('./assets/adey-abeba.png');
+      background-image: url('https://raw.githubusercontent.com/amenadam/adey-abeba-effects/main/assets/adey-abeba.png');
       background-size: contain;
       background-repeat: no-repeat;
       pointer-events: none;
