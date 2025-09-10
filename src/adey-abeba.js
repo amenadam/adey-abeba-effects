@@ -1,5 +1,26 @@
 (function (options = {}) {
   const effect = options.effect || "default"; // default, blur, glow, fancy
+  const enableMusic = options.enableMusic || false;
+
+  // 🎵 Music setup
+  if (enableMusic) {
+    const musicFiles = [
+      "https://cdn.jsdelivr.net/gh/amenadam/adey-abeba-effects/assets/music_one.mp3",
+      "https://cdn.jsdelivr.net/gh/amenadam/adey-abeba-effects/assets/music_two.mp3",
+      "https://cdn.jsdelivr.net/gh/amenadam/adey-abeba-effects/assets/music_three.mp3",
+    ];
+
+    const audio = new Audio(musicFiles[Math.floor(Math.random() * musicFiles.length)]);
+    audio.loop = true;
+    audio.volume = 0.6; // adjust volume
+    audio.play().catch(err => {
+      console.warn("Autoplay blocked by browser. Start music on user interaction.", err);
+      document.addEventListener("click", () => {
+        audio.play();
+      }, { once: true });
+    });
+  }
+
 
   const style = document.createElement("style");
   style.innerHTML = `
@@ -61,5 +82,5 @@
 
   setInterval(createFlower, 700);
 })(
-  window.AdeyAbebaOptions || { effect: "default" } // global config
+   window.AdeyAbebaOptions || { effect: "default", enableMusic: false }
 );
