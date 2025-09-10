@@ -13,13 +13,15 @@
       "https://cdn.jsdelivr.net/gh/amenadam/adey-abeba-effects/assets/music_three.mp3",
     ];
 
-    audio = new Audio(musicFiles[Math.floor(Math.random() * musicFiles.length)]);
+    audio = new Audio(
+      musicFiles[Math.floor(Math.random() * musicFiles.length)]
+    );
     audio.loop = true;
     audio.volume = 0.25; // 🔊 reduced volume
 
     function playAudio() {
       audio.currentTime = 10; // ⏩ skip first 10s (trim intro)
-      audio.play().catch(err => {
+      audio.play().catch((err) => {
         console.warn("Autoplay blocked. Starting on user click.", err);
         document.addEventListener("click", () => playAudio(), { once: true });
       });
@@ -111,6 +113,9 @@
 
   setInterval(createFlower, 700);
 })(
-  window.AdeyAbebaOptions || { effect: "fancy", enableMusic: true, theme: "dark" } // ✅ Config
+  window.AdeyAbebaOptions || {
+    effect: "fancy",
+    enableMusic: false,
+    theme: "dark",
+  } // ✅ Config
 );
-
