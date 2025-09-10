@@ -31,6 +31,5 @@
     setTimeout(() => flower.remove(), 10000);
   }
 
-  // Keep spawning flowers
   setInterval(createFlower, 800);
 })();
